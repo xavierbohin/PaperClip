@@ -17,6 +17,8 @@
 		2567AA0027612E65006DD294 /* PaperClipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2567A9FF27612E65006DD294 /* PaperClipUITests.swift */; };
 		2567AA0227612E65006DD294 /* PaperClipUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2567AA0127612E65006DD294 /* PaperClipUITestsLaunchTests.swift */; };
 		2567AA16276132CB006DD294 /* DetailAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2567AA15276132CB006DD294 /* DetailAdViewController.swift */; };
+		2598048927627C1700415730 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2598048827627C1700415730 /* GithubService.swift */; };
+		2598048B27627FA600415730 /* ClassifiedAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2598048A27627FA600415730 /* ClassifiedAdd.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		2567A9FF27612E65006DD294 /* PaperClipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperClipUITests.swift; sourceTree = "<group>"; };
 		2567AA0127612E65006DD294 /* PaperClipUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperClipUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2567AA15276132CB006DD294 /* DetailAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAdViewController.swift; sourceTree = "<group>"; };
+		2598048827627C1700415730 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
+		2598048A27627FA600415730 /* ClassifiedAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdd.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 		2567AA1027612F06006DD294 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2598048827627C1700415730 /* GithubService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 		2567AA1127612F0B006DD294 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2598048A27627FA600415730 /* ClassifiedAdd.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -319,7 +325,9 @@
 			files = (
 				2567A9E327612E65006DD294 /* ClassifiedAdListViewController.swift in Sources */,
 				2567A9DF27612E65006DD294 /* AppDelegate.swift in Sources */,
+				2598048B27627FA600415730 /* ClassifiedAdd.swift in Sources */,
 				2567AA16276132CB006DD294 /* DetailAdViewController.swift in Sources */,
+				2598048927627C1700415730 /* GithubService.swift in Sources */,
 				2567A9E127612E65006DD294 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

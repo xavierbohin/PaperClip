@@ -18,8 +18,17 @@ class ClassifiedAdListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.present(DetailAdViewController(), animated: true, completion: nil)
+        
+        var test = [ClassifiedAdd]()
+        
+        GithubService().getClassifiedAds(){ outpout in
+            test = outpout
+            print(test)
+        }
+        print(test)
     }
+    
+    
 
 
 }
