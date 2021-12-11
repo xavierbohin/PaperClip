@@ -20,6 +20,8 @@
 		2598048927627C1700415730 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2598048827627C1700415730 /* GithubService.swift */; };
 		2598048B27627FA600415730 /* ClassifiedAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2598048A27627FA600415730 /* ClassifiedAdd.swift */; };
 		2598048D2763CEBB00415730 /* ClassifiedAdListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2598048C2763CEBB00415730 /* ClassifiedAdListViewModel.swift */; };
+		259804902765095D00415730 /* ClassifiedAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2598048F2765095D00415730 /* ClassifiedAddTableViewCell.swift */; };
+		259804922765181C00415730 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259804912765181C00415730 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		2598048827627C1700415730 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
 		2598048A27627FA600415730 /* ClassifiedAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdd.swift; sourceTree = "<group>"; };
 		2598048C2763CEBB00415730 /* ClassifiedAdListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdListViewModel.swift; sourceTree = "<group>"; };
+		2598048F2765095D00415730 /* ClassifiedAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAddTableViewCell.swift; sourceTree = "<group>"; };
+		259804912765181C00415730 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 				2567A9E427612E65006DD294 /* Main.storyboard */,
 				2567A9E727612E65006DD294 /* Assets.xcassets */,
 				2567A9EC27612E65006DD294 /* Info.plist */,
+				259804912765181C00415730 /* UIImageView+Extension.swift */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -191,8 +196,17 @@
 			children = (
 				2567A9E227612E65006DD294 /* ClassifiedAdListViewController.swift */,
 				2598048C2763CEBB00415730 /* ClassifiedAdListViewModel.swift */,
+				2598048E2765093900415730 /* cell */,
 			);
 			path = ClassifiedAdList;
+			sourceTree = "<group>";
+		};
+		2598048E2765093900415730 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2598048F2765095D00415730 /* ClassifiedAddTableViewCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +342,8 @@
 			files = (
 				2567A9E327612E65006DD294 /* ClassifiedAdListViewController.swift in Sources */,
 				2567A9DF27612E65006DD294 /* AppDelegate.swift in Sources */,
+				259804902765095D00415730 /* ClassifiedAddTableViewCell.swift in Sources */,
+				259804922765181C00415730 /* UIImageView+Extension.swift in Sources */,
 				2598048B27627FA600415730 /* ClassifiedAdd.swift in Sources */,
 				2598048D2763CEBB00415730 /* ClassifiedAdListViewModel.swift in Sources */,
 				2567AA16276132CB006DD294 /* DetailAdViewController.swift in Sources */,

@@ -47,13 +47,13 @@ class ClassifiedAdListViewController: UIViewController, UITableViewDelegate, UIT
         ])
         
         // Register the table view cell class and its reuse id
-        self.classifiedAddTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        self.classifiedAddTableView.register(ClassifiedAddTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         
         // This view controller itself will provide the delegate methods and row data for the table view.
         classifiedAddTableView.delegate = self
         classifiedAddTableView.dataSource = self
         // Along with auto layout, these are the keys for enabling variable cell height
-        classifiedAddTableView.estimatedRowHeight = 44.0
+        classifiedAddTableView.estimatedRowHeight = 200.0
         classifiedAddTableView.rowHeight = UITableView.automaticDimension
         
         bindViewModel()
@@ -74,9 +74,10 @@ class ClassifiedAdListViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // create a new cell if needed or reuse an old one
-        let cell = self.classifiedAddTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)!
-        // set the text from the data model
-        cell.textLabel?.text = self.classifiedAdds[indexPath.row].title
+        let cell = self.classifiedAddTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! ClassifiedAddTableViewCell
+        // set the cell from the data model
+        cell.setContent(classifiedAdd: classifiedAdds[indexPath.row])
+        
         return cell
     }
     
