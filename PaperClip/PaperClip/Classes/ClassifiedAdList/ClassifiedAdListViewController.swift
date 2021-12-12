@@ -20,7 +20,9 @@ class ClassifiedAdListViewController: UIViewController, UITableViewDelegate, UIT
     
     var viewModel = ClassifiedAdListViewModel()
     var cancellables: Set<AnyCancellable> = []
-
+    
+    var categories = Dictionary<Int, String>()
+    
     var classifiedAdds: [ClassifiedAdd] = [] {
         didSet{
             DispatchQueue.main.async {
@@ -63,6 +65,10 @@ class ClassifiedAdListViewController: UIViewController, UITableViewDelegate, UIT
         viewModel.$classifiedAdds.sink { [weak self] adds in
             self?.classifiedAdds = adds
         }.store(in: &cancellables)
+        
+        viewModel.$categories.sink { [weak self] categories in
+            self?.categories = categories
+        }.store(in: &cancellables)
     }
     
     
@@ -76,7 +82,7 @@ class ClassifiedAdListViewController: UIViewController, UITableViewDelegate, UIT
         // create a new cell if needed or reuse an old one
         let cell = self.classifiedAddTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! ClassifiedAddTableViewCell
         // set the cell from the data model
-        cell.setContent(classifiedAdd: classifiedAdds[indexPath.row])
+        cell.setContent(classifiedAdd: classifiedAdds[indexPath.row], categories: categories)
         
         return cell
     }
@@ -84,7 +90,7 @@ class ClassifiedAdListViewController: UIViewController, UITableViewDelegate, UIT
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailAdd = DetailAddViewController(classifiedAdd: classifiedAdds[indexPath.row])
+        let detailAdd = DetailAddViewController(classifiedAdd: classifiedAdds[indexPath.row], categories: categories)
         detailAdd.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         detailAdd.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         self.present(detailAdd, animated: true, completion: nil)

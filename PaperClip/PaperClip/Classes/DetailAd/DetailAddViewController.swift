@@ -42,11 +42,11 @@ class DetailAddViewController: UIViewController {
     }()
 
     // MARK: - LyfeCycle
-    init(classifiedAdd: ClassifiedAdd) {
+    init(classifiedAdd: ClassifiedAdd, categories: Dictionary<Int,String>) {
         super.init(nibName: nil, bundle: nil)
         
         img.downloaded(from: classifiedAdd.thumbImgUrl)
-        category.text = String(classifiedAdd.categoryId)
+        category.text = String(from: classifiedAdd.categoryId, with: categories)
         addTitle.text = classifiedAdd.title
         creationDate.text = String(classifiedAdd.creationDate.prefix(10))
         addDescription.text = classifiedAdd.description
