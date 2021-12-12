@@ -14,11 +14,11 @@ class ClassifiedAddTableViewCell: UITableViewCell {
     // MARK: - Properties
     private lazy var img = PaperClipImageView()
     
-    private lazy var category = PaperClipLabel()
+    private lazy var category = PaperClipCategoryLabel()
     
-    private lazy var title = PaperClipLabel()
+    private lazy var title = PaperClipTitleLabel()
     
-    private lazy var price = PaperClipLabel()
+    private lazy var price = PaperClipPriceLabel()
     
     private lazy var icon = PaperClipImageView()
     
@@ -43,7 +43,7 @@ class ClassifiedAddTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             img.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-            img.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            img.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             img.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -5),
             img.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.33),
             
@@ -56,7 +56,7 @@ class ClassifiedAddTableViewCell: UITableViewCell {
             
             price.leadingAnchor.constraint(equalTo: category.leadingAnchor),
             price.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 5),
-            price.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -5),
+            price.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -10),
             
             icon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             icon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5)
@@ -67,7 +67,7 @@ class ClassifiedAddTableViewCell: UITableViewCell {
         img.downloaded(from: classifiedAdd.smallImgUrl)
         category.text = String(classifiedAdd.categoryId)
         title.text = classifiedAdd.title
-        price.text = String(classifiedAdd.price)
+        price.text = String(from: classifiedAdd.price)
         if (classifiedAdd.isUrgent) {
             icon.image = UIImage(systemName: "exclamationmark.circle.fill")
         } else {

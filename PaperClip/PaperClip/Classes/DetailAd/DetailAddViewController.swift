@@ -12,15 +12,15 @@ class DetailAddViewController: UIViewController {
     // MARK: - Properties
     private lazy var img = PaperClipImageView()
     
-    private lazy var category = PaperClipLabel()
+    private lazy var category = PaperClipCategoryLabel()
     
-    private lazy var addTitle = PaperClipLabel()
+    private lazy var addTitle = PaperClipTitleLabel()
     
-    private lazy var creationDate = PaperClipLabel()
+    private lazy var creationDate = PaperClipDateLabel()
     
     private lazy var addDescription = PaperClipLabel()
     
-    private lazy var price = PaperClipLabel()
+    private lazy var price = PaperClipPriceLabel()
     
     private lazy var icon = PaperClipImageView()
     
@@ -48,9 +48,9 @@ class DetailAddViewController: UIViewController {
         img.downloaded(from: classifiedAdd.thumbImgUrl)
         category.text = String(classifiedAdd.categoryId)
         addTitle.text = classifiedAdd.title
-        creationDate.text = classifiedAdd.creationDate
+        creationDate.text = String(classifiedAdd.creationDate.prefix(10))
         addDescription.text = classifiedAdd.description
-        price.text = String(classifiedAdd.price)
+        price.text = String(from: classifiedAdd.price)
         if classifiedAdd.isUrgent {
             icon.image = UIImage(systemName: "exclamationmark.circle.fill")
         }
@@ -93,26 +93,25 @@ class DetailAddViewController: UIViewController {
             closeButton.topAnchor.constraint(equalTo: img.topAnchor, constant: 5),
             closeButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 5),
             
-            category.topAnchor.constraint(equalTo: img.bottomAnchor),
-            category.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            category.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 5),
+            category.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 5),
             category.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             
-            creationDate.topAnchor.constraint(equalTo: category.bottomAnchor),
-            creationDate.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            creationDate.topAnchor.constraint(equalTo: category.bottomAnchor, constant: 5),
+            creationDate.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 5),
             creationDate.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             
-            addTitle.topAnchor.constraint(equalTo: creationDate.bottomAnchor),
-            addTitle.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            addTitle.topAnchor.constraint(equalTo: creationDate.bottomAnchor, constant: 5),
+            addTitle.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 5),
             addTitle.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             
-            price.topAnchor.constraint(equalTo: addTitle.bottomAnchor),
-            price.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            price.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            price.topAnchor.constraint(equalTo: addTitle.bottomAnchor, constant: 5),
+            price.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 5),
             
-            addDescription.topAnchor.constraint(equalTo: price.bottomAnchor),
-            addDescription.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            addDescription.topAnchor.constraint(equalTo: price.bottomAnchor, constant: 5),
+            addDescription.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 5),
             addDescription.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            addDescription.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            addDescription.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 5),
             addDescription.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
             
         ])
