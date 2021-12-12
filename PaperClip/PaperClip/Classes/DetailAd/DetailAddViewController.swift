@@ -35,6 +35,11 @@ class DetailAddViewController: UIViewController {
         return button
     }()
     
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
 
     // MARK: - LyfeCycle
     init(classifiedAdd: ClassifiedAdd) {
@@ -58,48 +63,57 @@ class DetailAddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .white
+        view.addSubview(scrollView)
         
-        view.addSubview(img)
-        view.addSubview(category)
-        view.addSubview(addTitle)
-        view.addSubview(creationDate)
-        view.addSubview(addDescription)
-        view.addSubview(price)
-        view.addSubview(icon)
-        view.addSubview(closeButton)
+        scrollView.backgroundColor = .white
+        
+        scrollView.addSubview(img)
+        scrollView.addSubview(category)
+        scrollView.addSubview(addTitle)
+        scrollView.addSubview(creationDate)
+        scrollView.addSubview(addDescription)
+        scrollView.addSubview(price)
+        scrollView.addSubview(icon)
+        scrollView.addSubview(closeButton)
         
         NSLayoutConstraint.activate([
-            img.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            img.topAnchor.constraint(equalTo: scrollView.topAnchor),
             img.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
-            img.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            img.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            img.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            img.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             
             icon.topAnchor.constraint(equalTo: img.topAnchor, constant: 5),
-            icon.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
+            icon.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -5),
             
             closeButton.topAnchor.constraint(equalTo: img.topAnchor, constant: 5),
-            closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
+            closeButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 5),
             
             category.topAnchor.constraint(equalTo: img.bottomAnchor),
-            category.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            category.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            category.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            category.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             
             creationDate.topAnchor.constraint(equalTo: category.bottomAnchor),
-            creationDate.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            creationDate.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            creationDate.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            creationDate.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             
             addTitle.topAnchor.constraint(equalTo: creationDate.bottomAnchor),
-            addTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            addTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            addTitle.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            addTitle.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             
             price.topAnchor.constraint(equalTo: addTitle.bottomAnchor),
-            price.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            price.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            price.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            price.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             
             addDescription.topAnchor.constraint(equalTo: price.bottomAnchor),
-            addDescription.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            addDescription.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            addDescription.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            addDescription.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            addDescription.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            addDescription.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
             
         ])
     }
