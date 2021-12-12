@@ -68,16 +68,35 @@ class DetailAddViewController: UIViewController {
         view.addSubview(closeButton)
         
         NSLayoutConstraint.activate([
-            img.topAnchor.constraint(equalTo: view.topAnchor),
+            img.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             img.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             img.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            icon.topAnchor.constraint(equalTo: view.topAnchor, constant: 5),
+            icon.topAnchor.constraint(equalTo: img.topAnchor, constant: 5),
             icon.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
             
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 5),
-            closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5)
+            closeButton.topAnchor.constraint(equalTo: img.topAnchor, constant: 5),
+            closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
             
+            category.topAnchor.constraint(equalTo: img.bottomAnchor),
+            category.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            category.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            creationDate.topAnchor.constraint(equalTo: category.bottomAnchor),
+            creationDate.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            creationDate.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            addTitle.topAnchor.constraint(equalTo: creationDate.bottomAnchor),
+            addTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            addTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            price.topAnchor.constraint(equalTo: addTitle.bottomAnchor),
+            price.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            price.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            addDescription.topAnchor.constraint(equalTo: price.bottomAnchor),
+            addDescription.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            addDescription.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             
         ])
     }

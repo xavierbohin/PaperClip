@@ -40,7 +40,7 @@ class ClassifiedAdListViewController: UIViewController, UITableViewDelegate, UIT
         view.addSubview(classifiedAddTableView)
         
         NSLayoutConstraint.activate([
-            classifiedAddTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            classifiedAddTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             classifiedAddTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             classifiedAddTableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             classifiedAddTableView.rightAnchor.constraint(equalTo: view.rightAnchor)
@@ -88,6 +88,7 @@ class ClassifiedAdListViewController: UIViewController, UITableViewDelegate, UIT
         detailAdd.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         detailAdd.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         self.present(detailAdd, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     
