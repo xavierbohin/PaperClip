@@ -84,7 +84,10 @@ class ClassifiedAdListViewController: UIViewController, UITableViewDelegate, UIT
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+        let detailAdd = DetailAddViewController(classifiedAdd: classifiedAdds[indexPath.row])
+        detailAdd.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        detailAdd.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(detailAdd, animated: true, completion: nil)
     }
     
     

@@ -12,37 +12,15 @@ class ClassifiedAddTableViewCell: UITableViewCell {
     
     
     // MARK: - Properties
-    private lazy var img: UIImageView = {
-        let img = UIImageView()
-        img.image = UIImage(systemName: "questionmark.square.dashed")
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
-    }()
+    private lazy var img = PaperClipImageView()
     
-    private lazy var category: UILabel = {
-        let category = UILabel()
-        category.translatesAutoresizingMaskIntoConstraints = false
-        return category
-    }()
+    private lazy var category = PaperClipLabel()
     
-    private lazy var title: UILabel = {
-        let title = UILabel()
-        title.numberOfLines = 0
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
-    }()
+    private lazy var title = PaperClipLabel()
     
-    private lazy var price: UILabel = {
-        let price = UILabel()
-        price.translatesAutoresizingMaskIntoConstraints = false
-        return price
-    }()
+    private lazy var price = PaperClipLabel()
     
-    private lazy var icon: UIImageView = {
-        let icon = UIImageView()
-        icon.translatesAutoresizingMaskIntoConstraints = false
-        return icon
-    }()
+    private lazy var icon = PaperClipImageView()
     
     
     // MARK: - Life Cycle
@@ -90,7 +68,11 @@ class ClassifiedAddTableViewCell: UITableViewCell {
         category.text = String(classifiedAdd.categoryId)
         title.text = classifiedAdd.title
         price.text = String(classifiedAdd.price)
-        if (classifiedAdd.isUrgent) { icon.image = UIImage(systemName: "exclamationmark.circle.fill") }
+        if (classifiedAdd.isUrgent) {
+            icon.image = UIImage(systemName: "exclamationmark.circle.fill")
+        } else {
+            icon.image = nil
+        }
     }
     
 

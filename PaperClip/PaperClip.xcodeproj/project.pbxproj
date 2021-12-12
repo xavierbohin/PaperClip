@@ -16,12 +16,14 @@
 		2567A9F627612E65006DD294 /* PaperClipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2567A9F527612E65006DD294 /* PaperClipTests.swift */; };
 		2567AA0027612E65006DD294 /* PaperClipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2567A9FF27612E65006DD294 /* PaperClipUITests.swift */; };
 		2567AA0227612E65006DD294 /* PaperClipUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2567AA0127612E65006DD294 /* PaperClipUITestsLaunchTests.swift */; };
-		2567AA16276132CB006DD294 /* DetailAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2567AA15276132CB006DD294 /* DetailAdViewController.swift */; };
+		2567AA16276132CB006DD294 /* DetailAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2567AA15276132CB006DD294 /* DetailAddViewController.swift */; };
 		2598048927627C1700415730 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2598048827627C1700415730 /* GithubService.swift */; };
 		2598048B27627FA600415730 /* ClassifiedAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2598048A27627FA600415730 /* ClassifiedAdd.swift */; };
 		2598048D2763CEBB00415730 /* ClassifiedAdListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2598048C2763CEBB00415730 /* ClassifiedAdListViewModel.swift */; };
 		259804902765095D00415730 /* ClassifiedAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2598048F2765095D00415730 /* ClassifiedAddTableViewCell.swift */; };
 		259804922765181C00415730 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259804912765181C00415730 /* UIImageView+Extension.swift */; };
+		25A2C5F4276663B80079A0BA /* PaperClipImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A2C5F3276663B80079A0BA /* PaperClipImageView.swift */; };
+		25A2C5F6276669740079A0BA /* PaperClipLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A2C5F5276669740079A0BA /* PaperClipLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +57,14 @@
 		2567A9FB27612E65006DD294 /* PaperClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaperClipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2567A9FF27612E65006DD294 /* PaperClipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperClipUITests.swift; sourceTree = "<group>"; };
 		2567AA0127612E65006DD294 /* PaperClipUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperClipUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2567AA15276132CB006DD294 /* DetailAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAdViewController.swift; sourceTree = "<group>"; };
+		2567AA15276132CB006DD294 /* DetailAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddViewController.swift; sourceTree = "<group>"; };
 		2598048827627C1700415730 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
 		2598048A27627FA600415730 /* ClassifiedAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdd.swift; sourceTree = "<group>"; };
 		2598048C2763CEBB00415730 /* ClassifiedAdListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdListViewModel.swift; sourceTree = "<group>"; };
 		2598048F2765095D00415730 /* ClassifiedAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAddTableViewCell.swift; sourceTree = "<group>"; };
 		259804912765181C00415730 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		25A2C5F3276663B80079A0BA /* PaperClipImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperClipImageView.swift; sourceTree = "<group>"; };
+		25A2C5F5276669740079A0BA /* PaperClipLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperClipLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			children = (
 				2567A9DE27612E65006DD294 /* AppDelegate.swift */,
 				2567A9E027612E65006DD294 /* SceneDelegate.swift */,
+				25A2C5F2276663990079A0BA /* common */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -186,7 +191,7 @@
 		2567AA1327612F3B006DD294 /* DetailAd */ = {
 			isa = PBXGroup;
 			children = (
-				2567AA15276132CB006DD294 /* DetailAdViewController.swift */,
+				2567AA15276132CB006DD294 /* DetailAddViewController.swift */,
 			);
 			path = DetailAd;
 			sourceTree = "<group>";
@@ -207,6 +212,15 @@
 				2598048F2765095D00415730 /* ClassifiedAddTableViewCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		25A2C5F2276663990079A0BA /* common */ = {
+			isa = PBXGroup;
+			children = (
+				25A2C5F3276663B80079A0BA /* PaperClipImageView.swift */,
+				25A2C5F5276669740079A0BA /* PaperClipLabel.swift */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,11 +357,13 @@
 				2567A9E327612E65006DD294 /* ClassifiedAdListViewController.swift in Sources */,
 				2567A9DF27612E65006DD294 /* AppDelegate.swift in Sources */,
 				259804902765095D00415730 /* ClassifiedAddTableViewCell.swift in Sources */,
+				25A2C5F4276663B80079A0BA /* PaperClipImageView.swift in Sources */,
 				259804922765181C00415730 /* UIImageView+Extension.swift in Sources */,
 				2598048B27627FA600415730 /* ClassifiedAdd.swift in Sources */,
 				2598048D2763CEBB00415730 /* ClassifiedAdListViewModel.swift in Sources */,
-				2567AA16276132CB006DD294 /* DetailAdViewController.swift in Sources */,
+				2567AA16276132CB006DD294 /* DetailAddViewController.swift in Sources */,
 				2598048927627C1700415730 /* GithubService.swift in Sources */,
+				25A2C5F6276669740079A0BA /* PaperClipLabel.swift in Sources */,
 				2567A9E127612E65006DD294 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
