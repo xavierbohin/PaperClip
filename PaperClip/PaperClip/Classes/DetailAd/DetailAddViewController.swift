@@ -27,8 +27,10 @@ class DetailAddViewController: UIViewController {
     private lazy var closeButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        var image = UIImage(systemName: "xmark.circle.fill")
+        let config = UIImage.SymbolConfiguration(pointSize: 30)
+        var image = UIImage(systemName: "xmark.circle.fill", withConfiguration: config)
         button.setImage(image, for: .normal)
+        button.tintColor = .red
         button.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
         return button
     }()
@@ -69,6 +71,7 @@ class DetailAddViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             img.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            img.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
             img.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             img.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             

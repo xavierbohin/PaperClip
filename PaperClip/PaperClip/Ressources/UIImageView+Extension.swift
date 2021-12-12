@@ -10,7 +10,8 @@ import UIKit
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode
-        self.image = UIImage(systemName: "questionmark.square.dashed")
+        self.image = UIImage(systemName: "photo")
+        self.tintColor = .gray
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
