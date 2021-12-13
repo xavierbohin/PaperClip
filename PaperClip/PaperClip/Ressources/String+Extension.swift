@@ -12,8 +12,8 @@ extension String {
         self.init(formattedPrice)
     }
     
-    init?(from categoryId: Int, with dictionary: Dictionary<Int, String>) {
-        let formattedCategory = dictionary[categoryId] ?? "divers"
+    init(from categoryId: Int, with dictionary: Dictionary<Int, String>) {
+        let formattedCategory = dictionary[categoryId] ?? "Toutes catégories"
         self.init(formattedCategory)
     }
 

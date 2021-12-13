@@ -12,6 +12,7 @@ class ClassifiedAdListViewModel {
     
     @Published var classifiedAdds: [ClassifiedAdd] = []
     @Published var categories = Dictionary<Int, String>()
+    var classifiedAddsTempStorage: [ClassifiedAdd] = []
     
     init(){
         GithubService().getClassifiedAds(){ result in
@@ -41,11 +42,25 @@ class ClassifiedAdListViewModel {
                 let dateB = dateFormatter.date(from: $1.creationDate) ?? Date()
                 return dateA.compare(dateB) == .orderedDescending
             })
-            
+            self.classifiedAddsTempStorage = sortedUrgentAdds+sortedOtherAdds
             self.classifiedAdds = sortedUrgentAdds+sortedOtherAdds
         }
         GithubService().getCategories(){ result in
             self.categories = result
+        }
+    }
+    
+    func getAdds(forCategory category: Int) {
+        if category == 0 {
+            classifiedAdds = classifiedAddsTempStorage
+        } else {
+            var addToReturn: [ClassifiedAdd] = []
+            for add in classifiedAddsTempStorage {
+                if add.categoryId == category {
+                    addToReturn.append(add)
+                }
+            }
+            classifiedAdds = addToReturn
         }
     }
     
