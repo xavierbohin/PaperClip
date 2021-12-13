@@ -64,7 +64,7 @@ class ClassifiedAddTableViewCell: UITableViewCell {
     }
     
     func setContent(classifiedAdd: ClassifiedAdd, categories: Dictionary<Int, String>) {
-        img.downloaded(from: classifiedAdd.smallImgUrl)
+        img.downloaded(from: classifiedAdd.thumbImgUrl)
         category.text = String(from: classifiedAdd.categoryId, with: categories)
         title.text = classifiedAdd.title
         price.text = String(from: classifiedAdd.price)

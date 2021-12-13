@@ -45,7 +45,7 @@ class DetailAddViewController: UIViewController {
     init(classifiedAdd: ClassifiedAdd, categories: Dictionary<Int,String>) {
         super.init(nibName: nil, bundle: nil)
         
-        img.downloaded(from: classifiedAdd.thumbImgUrl)
+        img.downloaded(from: classifiedAdd.smallImgUrl)
         category.text = String(from: classifiedAdd.categoryId, with: categories)
         addTitle.text = classifiedAdd.title
         creationDate.text = String(classifiedAdd.creationDate.prefix(10))
