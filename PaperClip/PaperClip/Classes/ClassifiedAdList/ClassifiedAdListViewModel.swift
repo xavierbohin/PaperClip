@@ -15,7 +15,34 @@ class ClassifiedAdListViewModel {
     
     init(){
         GithubService().getClassifiedAds(){ result in
-            self.classifiedAdds = result
+            
+            var urgentAdds: [ClassifiedAdd] = []
+            var otherAdds: [ClassifiedAdd] = []
+            
+            result.forEach({ add in
+                if add.isUrgent {
+                    urgentAdds.append(add)
+                } else {
+                    otherAdds.append(add)
+                }
+            })
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss+SSSS"
+            
+            let sortedUrgentAdds = urgentAdds.sorted(by: {
+                let dateA = dateFormatter.date(from: $0.creationDate) ?? Date()
+                let dateB = dateFormatter.date(from: $1.creationDate) ?? Date()
+                return dateA.compare(dateB) == .orderedDescending
+            })
+            
+            let sortedOtherAdds = otherAdds.sorted(by: {
+                let dateA = dateFormatter.date(from: $0.creationDate) ?? Date()
+                let dateB = dateFormatter.date(from: $1.creationDate) ?? Date()
+                return dateA.compare(dateB) == .orderedDescending
+            })
+            
+            self.classifiedAdds = sortedUrgentAdds+sortedOtherAdds
         }
         GithubService().getCategories(){ result in
             self.categories = result
