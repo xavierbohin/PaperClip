@@ -63,9 +63,9 @@ class ClassifiedAddTableViewCell: UITableViewCell {
         ])
     }
     
-    func setContent(classifiedAdd: ClassifiedAdd) {
-        img.downloaded(from: classifiedAdd.smallImgUrl)
-        category.text = String(classifiedAdd.categoryId)
+    func setContent(classifiedAdd: ClassifiedAdd, categories: Dictionary<Int, String>) {
+        img.downloaded(from: classifiedAdd.thumbImgUrl)
+        category.text = String(from: classifiedAdd.categoryId, with: categories)
         title.text = classifiedAdd.title
         price.text = String(from: classifiedAdd.price)
         if (classifiedAdd.isUrgent) {

@@ -26,6 +26,10 @@ class PaperClipCategoryLabel: PaperClipLabel {
     override init() {
         super.init()
         self.textColor = .gray
+        self.attributedText = NSAttributedString(string: "Category",
+                                                 attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue,
+                                                              .font: UIFont.systemFont(ofSize: 14)
+                                                             ])
     }
     
     required init?(coder: NSCoder) {

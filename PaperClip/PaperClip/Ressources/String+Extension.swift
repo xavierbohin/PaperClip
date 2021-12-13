@@ -11,5 +11,10 @@ extension String {
         let formattedPrice = String(price)+" €"
         self.init(formattedPrice)
     }
+    
+    init(from categoryId: Int, with dictionary: Dictionary<Int, String>) {
+        let formattedCategory = dictionary[categoryId] ?? "Toutes catégories"
+        self.init(formattedCategory)
+    }
 
 }
